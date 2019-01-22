@@ -6,3 +6,4 @@ Framework leve e enxuto para aplicações em PHP.
 ###### Execução de comandos SQL de forma amigável e segura;
 ###### Biblioteca de funções comuns;
 ###### Roteamento automático através do uso de estrutura de diretório + namespaces;
+###### Padrão em camadas (MVC);
