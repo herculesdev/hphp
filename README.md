@@ -82,4 +82,6 @@ Na primeira linha após o `<?php` temos a definição do  namespace do controlad
 - Por via de regra, é recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
 - Todo controlador deve possuir pelo menos um método, sempre com o nome `index`, este método será invocado caso não seja informado nenhum na URL. É chamado de "método padrão".
 
+Após isto, para testar basta acessar http://seuhost/framework/meuprimeirocontrolador/index ou simplesmente http://seuhost/framework/meuprimeirocontrolador/index
+
 
