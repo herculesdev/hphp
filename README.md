@@ -2,10 +2,11 @@
 Framework para desenvolvimento rápido em PHP, leve e enxuto.
 
 ## Features
-###### URL Amigáveis;
-###### Execução de comandos SQL de forma amigável e segura;
-###### Biblioteca de funções comuns;
-###### Roteamento automático através do uso de estrutura de diretório + namespaces;
+- URL Amigáveis;
+- Roteamento automático através do uso de estrutura de diretório + namespaces;
+- Execução de comandos SQL de forma amigável e segura;
+- Biblioteca de funções comuns;
+
 ###### Padrão em camadas (MVC);
 
 ## Estrutura de diretórios
