@@ -51,8 +51,7 @@ Após instalação, basta testar acessando a url no formato seuhost/framework, e
 O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em "model/", a parte visual em "view/" e o controle de fluxo em "controller/". Quando uma requisição é feita a um sistema que utiliza o H.PHP Framework, um controlador é acionado, e este por sua vez aciona os models e/ou views responsáveis pelo processamento e apresentação dos dados.
 A requisição se dá através da url no seguinte formato http://seuhost/framework/controlador/método/ ou ainda http://seuhost/framework/subpasta/controlador/método
 
-**Exemplos:**
-
+**Exemplos:**  
 http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método**
 http://localhost/framework/auth/user/login, **auth**, **user** e **login** são espectivamente **subpasta**, **controlador** e **método**
 
