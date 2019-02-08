@@ -52,6 +52,7 @@ O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados fic
 A requisição se dá através da url no seguinte formato http://seuhost/framework/controlador/método/ ou ainda http://seuhost/framework/subpasta/controlador/método
 
 **Exemplos:**
+
 http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método**
 http://localhost/framework/auth/user/login, **auth**, **user** e **login** são espectivamente **subpasta**, **controlador** e **método**
 
