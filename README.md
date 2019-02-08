@@ -11,20 +11,26 @@ Framework para desenvolvimento rápido em PHP, leve e enxuto.
 ## Estrutura de diretórios
 ```
 framework/
+├── .htaccess
+├── autoload.php
 ├── app/
 │   ├── config/
 │   |   └── config.php
-│   ├── model/
-│   ├── view/
+│   ├── Controller/
+|   │   ├── Home
+│   |   |   └── Welcome.php
+│   ├── Model/
+│   ├── View/
 │   |   ├── 404.php
 │   |   └── Welcome.php
-│   ├── controller/
-│   |   └── Welcome.php
 ├── core/
+│   ├── helpers/
+│   |   └── utils.php
 │   ├── Config.php
 │   ├── Controller.php
 │   ├── Model.php
 │   └── Router.php
 └── public/
+│   ├── .htaccess
 │   └── index.php
 ```
