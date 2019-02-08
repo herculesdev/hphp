@@ -62,8 +62,8 @@ Entendido, tudo isto, vamos prosseguir com a prática. Dentro  da pasta App/cont
 Dentro do arquivo, escreva o esqueleto básico de um controller no H.PHP Framework:
 
 ```php
-?php
-namespace App\Controller\Home;
+<?php
+namespace App\Controller;
 
 class MeuPrimeiroControlador extends \Core\Controller
 {
@@ -73,5 +73,7 @@ class MeuPrimeiroControlador extends \Core\Controller
     }
 }
 ```
+
+Na primeira linha após o `<?php` temos a definição do  namespace do controlador, isto é de extrema importância para que o roteamento funcione adequadamente, a criação dos namespaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`
 
 
