@@ -55,6 +55,23 @@ exemplos:
 http://localhost/framework/user/login, user e login são respectivamente controlador e método
 http://localhost/framework/auth/user/login, auth, user e login são espectivamente subpasta, controlador e método
 
-Obs: Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre tivermos uma URL como a do segundo exemplo significará que teremos exatamente uma ou mais subpastas.
+Obs: Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre que tivermos uma URL como a do segundo exemplo significará que teremos exatamente uma ou mais subpastas.
+
+Entendido, tudo isto, vamos prosseguir com a prática. Dentro  da pasta App/controller crie um arquivo com o nome que desejar, por exemplo MeuPrimeiroControlador.php
+
+Dentro do arquivo, escreva o esqueleto básico de um controller no H.PHP Framework:
+
+`
+?php
+namespace App\Controller\Home;
+
+class MeuPrimeiroControlador extends \Core\Controller
+{
+    public function index()
+    {
+      echo "Olá Mundo!
+    }
+}
+`
 
 
