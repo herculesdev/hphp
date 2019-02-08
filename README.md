@@ -53,7 +53,8 @@ A requisição se dá através da url no seguinte formato http://seuhost/framewo
 
 **Exemplos:**  
 http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método**
-http://localhost/framework/auth/user/login, **auth**, **user** e **login** são espectivamente **subpasta**, **controlador** e **método**  
+http://localhost/framework/auth/user/login, **auth**, **user** e **login** são espectivamente **subpasta**, **controlador** e **método** 
+
 **Obs:** Se não for informado o método na URL, o roteamento automático chamará a função padrão index() do controlador.  
 **Obs 2:** Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre que tivermos uma URL como a do segundo exemplo significa que temos uma ou mais subpastas.
 
