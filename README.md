@@ -1,5 +1,5 @@
 # H.PHP Framework
-Framework para desenvolvimento rápido em PHP, leve e enxuto.
+Framework leve e enxuto para desenvolvimento rápido em PHP.
 
 ## Features
 - URL Amigáveis;
@@ -37,3 +37,4 @@ framework/
 
 - App/ Arquivos da sua aplicação
 - Core/ Arquivos do framework
+- App/config/config.php - Arquivo de configuração (timezone, controlador padrão, banco de dados etc...)
