@@ -54,8 +54,8 @@ A requisição se dá através da url no seguinte formato http://seuhost/framewo
 **Exemplos:**  
 http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método**
 http://localhost/framework/auth/user/login, **auth**, **user** e **login** são espectivamente **subpasta**, **controlador** e **método**
-
-Obs: Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre que tivermos uma URL como a do segundo exemplo significará que teremos exatamente uma ou mais subpastas.
+Obs: Se não for informado o método na URL, o roteamento automático chamará a função padrão index() do controlador.
+Obs 2: Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre que tivermos uma URL como a do segundo exemplo significa que temos uma ou mais subpastas.
 
 Entendido, tudo isto, vamos prosseguir com a prática. Dentro  da pasta App/controller crie um arquivo com o nome que desejar, por exemplo MeuPrimeiroControlador.php
 
@@ -69,11 +69,14 @@ class MeuPrimeiroControlador extends \Core\Controller
 {
     public function index()
     {
-      echo "Olá Mundo!
+      echo "Olá Mundo!";
     }
 }
 ```
 
-Na primeira linha após o `<?php` temos a definição do  namespace do controlador, isto é de extrema importância para que o roteamento funcione adequadamente, a criação dos namespaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`
+Na primeira linha após o `<?php` temos a definição do  namespace do controlador, isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namespaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`.
+
+- Por via de regra, é recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
+- Todo controlador deve possuir pelo menos um método, sempre com o nome `index`, este método será invocado caso não seja informado nenhum na URL. É chamado de "método padrão".
 
 
