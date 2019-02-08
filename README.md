@@ -35,6 +35,7 @@ framework/
 │   └── index.php
 ```
 
+### Pastas e arquivos importantes
 - App/ - Arquivos da sua aplicação
 - Core/ - Arquivos do framework
 - App/config/config.php - Arquivo de configuração (timezone, controlador padrão, banco de dados etc...)
