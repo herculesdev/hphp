@@ -1,5 +1,5 @@
 # H.PHP Framework
-Framework leve e enxuto, que oferece uma estrutura básica para o desenvolvimento de suas aplicações em PHP.
+Framework para desenvolvimento rápido em PHP, leve e enxuto.
 
 ## Features
 ###### URL Amigáveis;
@@ -7,3 +7,19 @@ Framework leve e enxuto, que oferece uma estrutura básica para o desenvolviment
 ###### Biblioteca de funções comuns;
 ###### Roteamento automático através do uso de estrutura de diretório + namespaces;
 ###### Padrão em camadas (MVC);
+
+## Estrutura de diretórios
+```
+Framework
+| autoload.php
+|___app
+|   |___model
+|   |___view
+|   |___controller
+|___core
+|   | Controller.php
+|   | Model.php
+|   | Config.php
+|   | Router.php
+|___public
+```
