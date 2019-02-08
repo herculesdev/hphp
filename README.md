@@ -34,3 +34,6 @@ framework/
 │   ├── .htaccess
 │   └── index.php
 ```
+
+- App/ Arquivos da sua aplicação
+- Core/ Arquivos do framework
