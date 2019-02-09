@@ -159,7 +159,7 @@ No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os
     <title>Minha View</title>
 </head>
 <body>
-    <h2>Olá, meu nome é `<?php echo $data['nome'] ?>` e tenho `<?php echo $data['idade] ?>` anos</h2>
+    <h2>Olá, meu nome é <?php echo $data['nome'] ?> e tenho <?php echo $data['idade] ?> anos</h2>
 </body>
 </html>
 ```
