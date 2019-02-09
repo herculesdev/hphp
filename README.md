@@ -164,6 +164,7 @@ No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os
 </html>
 ```
 **Observação:** Na view, os dados sempre são recuperados através da variável `$data`, não importa o nome que você deu a ela no controlador.  
-**Observação 2:** As views podem ser colocadas em subdiretórios. Ex: dentro de `App/view` podemos criar uma pasta chamada `viewsUsuario` e dentro dela colocar `minhaView.php`, contudo no momento de carregá-la devemos informar o subdiretório, o código a seguir ilustra isso:  
+**Observação 2:** As views podem ser colocadas em subdiretórios. Ex: dentro de `App/view` podemos criar uma pasta chamada `viewsUsuario` e dentro dela colocar `minhaView.php`, contudo no momento de carregá-la devemos informar o subdiretório.  
+O código a seguir ilustra isso:  
 `$this->loadView("viewsUsuario/minhaView");`
 
