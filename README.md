@@ -125,10 +125,39 @@ class MeuPrimeiroControlador extends \Core\Controller
     public function segundoMetodo()
     {
         // Carrega a view "minhaView.html"
-        $this->loadView("minhaView);
+        $this->loadView("minhaView");
     }
 }
 ```
 
-**Observação:** Views por padrão podem ter os formatos  `.PHP` e `.HTML`, no entanto é possível adicionar novos formatos editando o arquivo `App/Config/config.php` adicionando mais elementos na entrada `viewExtensions`.  
+**Observação:** Views por padrão podem ter os formatos  `.PHP` e `.HTML`, no entanto é possível adicionar novos formatos editando o arquivo `App/Config/config.php` adicionando mais elementos na entrada `viewExtensions`. 
+
+#### Enviando dados para a view
+O primeiro passo é alterar a extensão da nossa view de `.HTML` para `.PHP` ficando `minhaView.php`, isto é necessário pois agora vamos receber dados do controlador e exibí-los.  
+
+No controlador vamos fazer alterar o `segundoMetodo()` criando um array de nome qualquer e inserindo os dados que desejamos
+```php
+    public function segundoMetodo()
+    {
+        $dados['nome'] = 'Hércules M.';
+        $dados['idade'] = '21';
+        
+        // Carrega a view "minhaView.php" e envia o array $dados
+        $this->loadView("minhaView", $dados);
+    }
+}
+
+No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os dados provenientes do controlador
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha View</title>
+</head>
+<body>
+    <h2>Olá, meu nome é <?php echo $data['nome']?> e tenho <php echo $data['idade] ?></h2>
+</body>
+</html>
+```
 
