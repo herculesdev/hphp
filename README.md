@@ -47,7 +47,7 @@ Considerando que já tenha um web server funcionando, pouca ou nenhuma configura
 # Testando
 Após instalação, basta testar acessando a url no formato seuhost/framework, ex: http://localhost/framework ou ainda http://localhost/ caso tenha extraído conteúdo interno da pasta "framework/" para a raiz do web server.
 
-# Criando primeiro controller/página
+# Criando Primeiro Controller
 O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em "model/", a parte visual em "view/" e o controle de fluxo em "controller/". Quando uma requisição é feita a um sistema que utiliza o H.PHP Framework, um controlador é acionado, e este por sua vez aciona os models e/ou views responsáveis pelo processamento e apresentação dos dados.
 A requisição se dá através da URL nos seguintes formatos  
 1. http://seuhost/framework/controlador/método/
@@ -74,14 +74,26 @@ class MeuPrimeiroControlador extends \Core\Controller
     {
       echo "Olá Mundo!";
     }
+    
+    public function segundoMetodo()
+    {
+        echo "Este é o segundo método deste controlador!";
+    }
 }
 ```
 
 Na primeira linha após o `<?php` temos a definição do  namespace do controlador, isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namespaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`.
 
-- Por via de regra, é recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
-- Todo controlador deve possuir pelo menos um método, sempre com o nome `index`, este método será invocado caso não seja informado nenhum na URL. É chamado de "método padrão".
+- É recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
+- O método `index` é o método padrão, ele é acionado quando se faz uma requisição passando somente o nome do controlador na URL.
 
-Após isto, para testar basta acessar http://seuhost/framework/meuprimeirocontrolador/index ou simplesmente http://seuhost/framework/meuprimeirocontrolador
+Para testar basta acessar  
+http://seuhost/framework/meuprimeirocontrolador/index   
+O endereço http://seuhost/framework/meuprimeirocontrolador/ tem o mesmo esfeito do link anterior, pois aqui omitimos o nome 'index' da URL, mas como este é o método padrão, ele será acionado da mesma forma.
+
+Para acionar `segundoMetodo()` use a seguinte URL:
+http://seuhost/framework/meuprimeirocontrolador/segundometodo/
+
+# Criando e Carregando Views
 
 
