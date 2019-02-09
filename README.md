@@ -110,7 +110,7 @@ Crie um arquivo de nome `minhaView.html` no diretório `App/view`, dentro insira
 </body>
 </html>
 ```
-Para carregá-la a partir de um controlador para usar a funcionalidade herdada `loadView($view)` da seguinte forma:  
+Para carregá-la a partir de um controlador basta usar a funcionalidade herdada `loadView($view)` da seguinte forma:  
 ```php
 <?php
 namespace App\Controller;
@@ -129,4 +129,6 @@ class MeuPrimeiroControlador extends \Core\Controller
     }
 }
 ```
+
+**Observação:** Views por padrão podem ter os formatos  `.PHP` e `.HTML`, no entanto é possível adicionar novos formatos editando o arquivo `App/Config/config.php` adicionando mais elementos na entrada `viewExtensions`.  
 
