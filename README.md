@@ -96,5 +96,37 @@ Para acionar `segundoMetodo()` use a seguinte URL:
 http://seuhost/framework/meuprimeirocontrolador/segundometodo/
 
 # Criando e Carregando Views
+Crie um arquivo de nome `minhaView.html` no diretório `App/view`, dentro insira o conteúdo que desejar, tal como o seguinte código HTML  
 
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minha View</title>
+</head>
+<body>
+    <h2>Olá Mundo!</h2>
+</body>
+</html>
+```
+Para carregá-la a partir de um controlador para usar a funcionalidade herdada `loadView($view)` da seguinte forma:  
+```php
+<?php
+namespace App\Controller;
+
+class MeuPrimeiroControlador extends \Core\Controller
+{
+    public function index()
+    {
+      echo "Olá Mundo!";
+    }
+    
+    public function segundoMetodo()
+    {
+        // Carrega a view "minhaView.html"
+        $this->loadView("minhaView);
+    }
+}
+```
 
