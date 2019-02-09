@@ -60,7 +60,7 @@ http://localhost/framework/auth/user/login, **auth**, **user** e **login** são 
 **Observação 1:** Se não for informado o método na URL, o roteamento automático chamará a função padrão index() do controlador.  
 **Observação 2:** Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre que tivermos uma URL como a do segundo exemplo significa que temos uma ou mais subpastas.
 
-Entendido, tudo isto, vamos prosseguir com a prática. Dentro  da pasta App/controller crie um arquivo com o nome que desejar, por exemplo MeuPrimeiroControlador.php
+Entendido isto, vamos prosseguir com a prática. Dentro  da pasta App/controller crie um arquivo com o nome que desejar, por exemplo MeuPrimeiroControlador.php
 
 Dentro do arquivo, escreva o esqueleto básico de um controller no H.PHP Framework:
 
@@ -82,14 +82,15 @@ class MeuPrimeiroControlador extends \Core\Controller
 }
 ```
 
-Na primeira linha após o `<?php` temos a definição do  namespace do controlador, isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namespaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`.
+Na primeira linha após o `<?php` temos a definição do  namespace do controlador e isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namepaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`.
 
 - É recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
-- O método `index` é o método padrão, ele é acionado quando se faz uma requisição passando somente o nome do controlador na URL.
+- O método `index()` é o método padrão, ele pode ser acionado mesmo quando omitimos seu nome da URL, passando somente o nome do controlador.
+- Através de subpasta, controladores e métodos que você formará as URL's amigáveis do seu sistema.
 
 Para testar basta acessar  
 http://seuhost/framework/meuprimeirocontrolador/index   
-O endereço http://seuhost/framework/meuprimeirocontrolador/ tem o mesmo esfeito do link anterior, pois aqui omitimos o nome 'index' da URL, mas como este é o método padrão, ele será acionado da mesma forma.
+O endereço http://seuhost/framework/meuprimeirocontrolador/ tem o mesmo efeito do link anterior, pois aqui omitimos o nome 'index' da URL, mas como este é o método padrão e nenhum outro nome foi informado, ele será acionado do mesmo jeito.
 
 Para acionar `segundoMetodo()` use a seguinte URL:
 http://seuhost/framework/meuprimeirocontrolador/segundometodo/
