@@ -147,6 +147,12 @@ No controlador vamos fazer alterar o `segundoMetodo()` criando um array de nome 
     }
 }
 ```
+**Observação:** Os dados chegam na view da forma em que foram passados no controlador, então caso queira passar uma única informação, não é necessário criar um array. Pode-se fazer da seguinte forma:  
+`
+$dados = 'Hercules;  
+$this->loadView("minhaView", $dados);
+`
+
 No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os dados provenientes do controlador
 ```html
 <!DOCTYPE html>
@@ -156,9 +162,9 @@ No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os
     <title>Minha View</title>
 </head>
 <body>
-    <!-- language: php -->
-    <h2>Olá, meu nome é <?php echo $data['nome'] ?> e tenho <?php echo $data['idade] ?> anos</h2>
+    <h2>Olá, meu nome é `<?php echo $data['nome'] ?>` e tenho `<?php echo $data['idade] ?>` anos</h2>
 </body>
 </html>
 ```
+**Observação:** Na view, os dados sempre são recuperados através da variável `$data`, não importa o nome que você deu a ela no controlador.  
 
