@@ -151,7 +151,7 @@ No controlador vamos fazer alterar o `segundoMetodo()` criando um array de nome 
 
 
 No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os dados provenientes do controlador
-```html
+~~~
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,6 +162,6 @@ No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os
     <h2>Olá, meu nome é `<?php echo $data['nome'] ?>` e tenho `<?php echo $data['idade] ?>` anos</h2>
 </body>
 </html>
-```
+~~~
 **Observação:** Na view, os dados sempre são recuperados através da variável `$data`, não importa o nome que você deu a ela no controlador.  
 
