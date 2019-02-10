@@ -47,8 +47,8 @@ Considerando que exista um servidor instalado e configurado, a instalação do H
 
 ### Testando
 Após a instalação, podemos testar o funcionamento do framework acessando um dos seguintes links:   
-`http://seuservidor/framework/`, caso tenha feito a instalação padrão  
-`http://seuservidor/nomeSuaApp/`, caso tenha renomeado a pasta raiz para um nome qualquer
+`http://seuservidor/framework/`, caso tenha feito a instalação padrão   
+`http://seuservidor/nomeSuaApp/`, caso tenha renomeado a pasta raiz para um nome qualquer  
 `http://seuservidor/`, caso tenha colocado o conteúdo interno da pasta raiz direto no diretório `www` do seu web server.  
 se tudo correr bem, poderá visualizar o seguinte resultado:
 
