@@ -126,9 +126,10 @@ class MeuControlador extends \Core\Controller
 **Observação:** Você deve ter notado que passamos somente o nome da view, sem a extensão ".html" para a função `loadView()`, isto é feito desta forma pois o H.PHP Framework procura e detecta automaticamente a extensão. Por padrão, são aceitos os formatos `.PHP` e `.HTML`, sendo perfeitamente possível adicionar novas extensões alterando a entrada `viewExtensions` no arquivo `App/Config/config.php`.
 
 Feito isso, acesse http://seuservidor/framework/meucontrolador/teste para visualizar o resultado:
+
 ![](https://i.imgur.com/oRRtt2K.jpg)
 
-#### Enviando dados para a view
+### Enviando Dados Para View
 O primeiro passo é alterar a extensão da nossa view de `.HTML` para `.PHP` ficando `minhaView.php`, isto é necessário pois agora vamos receber dados do controlador e exibí-los.  
 
 No controlador vamos fazer alterar o `segundoMetodo()` criando um array de nome qualquer e inserindo os dados que desejamos
