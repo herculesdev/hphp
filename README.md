@@ -55,7 +55,7 @@ se tudo correr bem, poderá visualizar o seguinte resultado:
 ![](https://i.imgur.com/E0Q22K0.png)
 
 # Criando Primeiro Controller
-O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em "model/", a parte visual em "view/" e o controle de fluxo em "controller/". Quando uma requisição é feita a um sistema que utiliza o H.PHP Framework, um controlador é acionado, e este por sua vez aciona os models e/ou views responsáveis pelo processamento e apresentação dos dados.
+O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em `App/model`, a parte visual em `App/view` e o controle de fluxo em `App/controller`. Quando uma requisição é feita a um sistema construídi sobre o H.PHP Framework, um controlador é acionado e nele você pode escrever o código que acionará a camada de negócios ou carregará uma view.
 A requisição se dá através da URL nos seguintes formatos  
 1. http://seuhost/framework/controlador/método/
 2. http://seuhost/framework/subpasta/controlador/método
