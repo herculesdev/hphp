@@ -78,9 +78,10 @@ Na primeira linha após o `<?php` temos a definição do  namespace do controlad
 1. Nomes em CamelCase
 2. O namespace deve ser igual ao caminho do diretório
 
-Exemplificando as regras, imagine que em `App/controller` você crie uma pasta com o nome `moduloX` e dentro dela coloque um controlador `SeuControlador.php`, logo o seu namespace será `App/Controller/ModuloX`.
+Exemplificando as regras, imagine que em `App/controller` você crie uma pasta com o nome `moduloX` e dentro dela coloque um controlador `SeuControlador.php`, logo o seu namespace será `App\Controller\ModuloX`.
 
-- É recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
+- Apesar de não ser obrigatório, é extremamente recomendável que o seu controlador herde da classe `Core\Controller`, pois esta fornece um comportamento padrão, sem ela não será possível receber dados via post, get, resgatar parâmetros da URL e diversas outras coisas, logo, dificilmente você encontrará algum motivo para não herdá-la. 
+
 - O método `index()` é o método padrão, ele pode ser acionado mesmo quando omitimos seu nome da URL, passando somente o nome do controlador.
 - Através de subpasta, controladores e métodos que você formará as URL's amigáveis do seu sistema.
 
