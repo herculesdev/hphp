@@ -59,13 +59,7 @@ O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados fic
 A requisição se dá através da URL no seguinte formato:    
 http://seuhost/framework/controlador/método/
 
-**Exemplo:**  
-http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método** 
-
-**Observação:** Se não for informado o método na URL, o roteamento automático chamará a função padrão index() do controlador. 
-Entendido isto, vamos prosseguir com a prática. Dentro  da pasta App/controller crie um arquivo com o nome que desejar, por exemplo MeuPrimeiroControlador.php
-
-Dentro do arquivo, escreva o esqueleto básico de um controller no H.PHP Framework:
+Para exemplificar criaremos em `App/controller` um arquivo chamado `MeuControlador`
 
 ```php
 <?php
