@@ -55,18 +55,14 @@ se tudo correr bem, poderá visualizar o seguinte resultado:
 ![](https://i.imgur.com/E0Q22K0.png)
 
 # Criando Primeiro Controller
-O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em `App/model`, a parte visual em `App/view` e o controle de fluxo em `App/controller`. Quando uma requisição é feita a um sistema construídi sobre o H.PHP Framework, um controlador é acionado e nele você pode escrever o código que acionará a camada de negócios ou carregará uma view.
-A requisição se dá através da URL nos seguintes formatos  
-1. http://seuhost/framework/controlador/método/
-2. http://seuhost/framework/subpasta/controlador/método
+O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em `App/model`, a parte visual em `App/view` e o controle de fluxo em `App/controller`. Quando uma requisição é feita a um sistema construido sobre o H.PHP Framework, um controlador é acionado e nele você pode escrever o código que acionará a camada de negócios ou carregará uma view.
+A requisição se dá através da URL no seguinte formato:    
+http://seuhost/framework/controlador/método/
 
-**Exemplos:**  
-http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método**
-http://localhost/framework/auth/user/login, **auth**, **user** e **login** são espectivamente **subpasta**, **controlador** e **método** 
+**Exemplo:**  
+http://localhost/framework/user/login, **user** e **login** são respectivamente **controlador** e **método** 
 
-**Observação 1:** Se não for informado o método na URL, o roteamento automático chamará a função padrão index() do controlador.  
-**Observação 2:** Mais adiante veremos que podemos passar parâmetros pela URL, então nem sempre que tivermos uma URL como a do segundo exemplo significa que temos uma ou mais subpastas.
-
+**Observação:** Se não for informado o método na URL, o roteamento automático chamará a função padrão index() do controlador. 
 Entendido isto, vamos prosseguir com a prática. Dentro  da pasta App/controller crie um arquivo com o nome que desejar, por exemplo MeuPrimeiroControlador.php
 
 Dentro do arquivo, escreva o esqueleto básico de um controller no H.PHP Framework:
