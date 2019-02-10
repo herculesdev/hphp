@@ -95,8 +95,7 @@ Você pode criar outros métodos e executá-los acessando a URL sempre no format
 Caso queira, pode criar um método `index()` ele é conhecido como "Método Padrão" e é acionado automaticamente quando você não informa o nome do método na URL, ex: http://seuservidor/framework/meucontrolador
 
 # Criando e Carregando Views
-Crie um arquivo de nome `minhaView.html` no diretório `App/view`, dentro insira o conteúdo que desejar, tal como o seguinte código HTML  
-
+As views como você já sabe são as interfaces com o usuário (GUI's) e normalmente é formada de códigos mistos (PHP, HTML, CSS e JavaScript). Para gerar sua primeira view, crie no diretório `App/view` um arquivo de nome `minhaView.html` e insira nele o seguinte código:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -109,27 +108,25 @@ Crie um arquivo de nome `minhaView.html` no diretório `App/view`, dentro insira
 </body>
 </html>
 ```
-Para carregá-la a partir de um controlador basta usar a funcionalidade herdada `loadView($view)` da seguinte forma:  
+Agora precisamos carregá-la e renderizá-la a partir de um controller, para tal iremos utilizar a funcionalidade herdada `loadView()`. Reaproveitando o controlador criado na sessão "Criando Primeiro Controller" o código fica da seguinte forma:
+
 ```php
 <?php
 namespace App\Controller;
 
-class MeuPrimeiroControlador extends \Core\Controller
+class MeuControlador extends \Core\Controller
 {
-    public function index()
+    public function teste()
     {
-      echo "Olá Mundo!";
-    }
-    
-    public function segundoMetodo()
-    {
-        // Carrega a view "minhaView.html"
-        $this->loadView("minhaView");
+      $this->loadView("minhaView);
     }
 }
 ```
 
-**Observação:** Views por padrão podem ter os formatos  `.PHP` e `.HTML`, no entanto é possível adicionar novos formatos editando o arquivo `App/Config/config.php` adicionando mais elementos na entrada `viewExtensions`. 
+**Observação:** Você deve ter notado que passamos somente o nome da view, sem a extensão ".html" para a função `loadView()`, isto é feito desta forma pois o H.PHP Framework procura e detecta automaticamente a extensão. Por padrão, são aceitos os formatos `.PHP` e `.HTML`, sendo perfeitamente possível adicionar novas extensões alterando a entrada `viewExtensions` no arquivo `App/Config/config.php`.
+
+Feito isso, acesse http://seuservidor/framework/meucontrolador/teste para visualizar o resultado:
+![](https://i.imgur.com/oRRtt2K.jpg)
 
 #### Enviando dados para a view
 O primeiro passo é alterar a extensão da nossa view de `.HTML` para `.PHP` ficando `minhaView.php`, isto é necessário pois agora vamos receber dados do controlador e exibí-los.  
