@@ -42,10 +42,17 @@ framework/
 - App/config/config.php - Arquivo de configuração (timezone, controlador padrão, banco de dados etc...)
 
 # Instalação
-Considerando que já tenha um web server funcionando, pouca ou nenhuma configuração precisa ser feita para instalação do framework, basta baixar e extrair a pasta no diretório do seu servidor. Obs: a pasta raiz "framework/" pode ter seu nome alterado para o nome de sua aplicação, ou ainda, pode extrair o conteúdo interno dessa pasta para o diretório do seu web server, sendo que dessa forma não precisará informar a pasta após a url para que seja possível acessar o sistema.
+Considerando que exista um servidor instalado e configurado, a instalação do H.PHP Framework é muito simples: baixe e extraia o conteúdo para o diretório `www` do seu web server.  
+**Observação:** A pasta raiz `framework` pode ter o seu nome alterado para o nome de sua aplicação, bem como seu conteúdo interno também pode ser colocado no diretório `www` do web server.
 
-# Testando
-Após instalação, basta testar acessando a url no formato seuhost/framework, ex: http://localhost/framework ou ainda http://localhost/ caso tenha extraído conteúdo interno da pasta "framework/" para a raiz do web server.
+### Testando
+Após a instalação, podemos testar o funcionamento do framework acessando um dos seguintes links: 
+
+`http://seuservidor/framework/`, caso tenha feito a instalação padrão  
+`http://seuservidor/nomeSuaApp/`, caso tenha renomeado a pasta raiz para um nome qualquer
+`http://seuservidor/`, caso tenha colocado o conteúdo interno da pasta raiz direto no diretório `www` do seu web server.  
+se tudo correr bem, poderá visualizar o seguinte resultado:
+![](https://i.imgur.com/E0Q22K0.png)
 
 # Criando Primeiro Controller
 O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados ficam em "model/", a parte visual em "view/" e o controle de fluxo em "controller/". Quando uma requisição é feita a um sistema que utiliza o H.PHP Framework, um controlador é acionado, e este por sua vez aciona os models e/ou views responsáveis pelo processamento e apresentação dos dados.
