@@ -74,23 +74,21 @@ class MeuControlador extends \Core\Controller
 }
 ```
 
+### Namespaces
 Na primeira linha após o `<?php` temos a definição do  namespace do controlador e isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namepaces deve seguir as seguintes regras:  
 1. Nomes em CamelCase
 2. O namespace deve ser igual ao caminho do diretório
 
 Exemplificando as regras, imagine que em `App/controller` você crie uma pasta com o nome `moduloX` e dentro dela coloque um controlador `SeuControlador.php`, logo o seu namespace será `App\Controller\ModuloX`.
 
-- Apesar de não ser obrigatório, é extremamente recomendável que o seu controlador herde da classe `Core\Controller`, pois esta fornece um comportamento padrão, sem ela não será possível receber dados via post, get, resgatar parâmetros da URL e diversas outras coisas, logo, dificilmente você encontrará algum motivo para não herdá-la. 
+### Herança
+Apesar de não ser obrigatório, é extremamente recomendável que o seu controlador herde da classe `Core\Controller`, pois esta fornece um comportamento padrão, sem ela não será possível receber dados via post, get, resgatar parâmetros da URL e diversas outras coisas, logo, dificilmente você encontrará algum motivo para não herdá-la. 
 
-- O método `index()` é o método padrão, ele pode ser acionado mesmo quando omitimos seu nome da URL, passando somente o nome do controlador.
-- Através de subpasta, controladores e métodos que você formará as URL's amigáveis do seu sistema.
+### Teste...
+Acesse http://seuservidor/framework/meucontrolador/teste, se tudo correr bem o seguinte resultado deve ser visualizado:
+![](https://i.imgur.com/6F3uxjK.jpg)
 
-Para testar basta acessar  
-http://seuhost/framework/meuprimeirocontrolador/index   
-O endereço http://seuhost/framework/meuprimeirocontrolador/ tem o mesmo efeito do link anterior, pois aqui omitimos o nome 'index' da URL, mas como este é o método padrão e nenhum outro nome foi informado, ele será acionado do mesmo jeito.
-
-Para acionar `segundoMetodo()` use a seguinte URL:
-http://seuhost/framework/meuprimeirocontrolador/segundometodo/
+Você pode criar outros métodos e executá-los acessando http://seuservidor/framework/seuControlador/seuMetodo
 
 # Criando e Carregando Views
 Crie um arquivo de nome `minhaView.html` no diretório `App/view`, dentro insira o conteúdo que desejar, tal como o seguinte código HTML  
