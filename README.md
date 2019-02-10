@@ -86,9 +86,13 @@ Apesar de não ser obrigatório, é extremamente recomendável que o seu control
 
 ### Teste...
 Acesse http://seuservidor/framework/meucontrolador/teste, se tudo correr bem o seguinte resultado deve ser visualizado:
+
 ![](https://i.imgur.com/6F3uxjK.jpg)
 
-Você pode criar outros métodos e executá-los acessando http://seuservidor/framework/seuControlador/seuMetodo
+Você pode criar outros métodos e executá-los acessando a URL sempre no formato seuservidor/framework/seuControlador/seuMetodo
+
+### Método Especial index()
+Caso queira, pode criar um método `index()` ele é conhecido como "Método Padrão" e é acionado automaticamente quando você não informa o nome do método na URL, ex: http://seuservidor/framework/meucontrolador
 
 # Criando e Carregando Views
 Crie um arquivo de nome `minhaView.html` no diretório `App/view`, dentro insira o conteúdo que desejar, tal como o seguinte código HTML  
