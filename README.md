@@ -46,12 +46,12 @@ Considerando que exista um servidor instalado e configurado, a instalação do H
 **Observação:** A pasta raiz `framework` pode ter o seu nome alterado para o nome de sua aplicação, bem como seu conteúdo interno também pode ser colocado no diretório `www` do web server.
 
 ### Testando
-Após a instalação, podemos testar o funcionamento do framework acessando um dos seguintes links: 
-
+Após a instalação, podemos testar o funcionamento do framework acessando um dos seguintes links:   
 `http://seuservidor/framework/`, caso tenha feito a instalação padrão  
 `http://seuservidor/nomeSuaApp/`, caso tenha renomeado a pasta raiz para um nome qualquer
 `http://seuservidor/`, caso tenha colocado o conteúdo interno da pasta raiz direto no diretório `www` do seu web server.  
 se tudo correr bem, poderá visualizar o seguinte resultado:
+
 ![](https://i.imgur.com/E0Q22K0.png)
 
 # Criando Primeiro Controller
