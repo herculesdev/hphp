@@ -59,27 +59,26 @@ O H.PHP utiliza o padrão MVC, isto significa que a camada de acesso a dados fic
 A requisição se dá através da URL no seguinte formato:    
 http://seuhost/framework/controlador/método/
 
-Para exemplificar criaremos em `App/controller` um arquivo chamado `MeuControlador`
+Para exemplificar criaremos em `App/controller` um arquivo chamado `MeuControlador.php`
 
 ```php
 <?php
 namespace App\Controller;
 
-class MeuPrimeiroControlador extends \Core\Controller
+class MeuControlador extends \Core\Controller
 {
-    public function index()
+    public function teste()
     {
       echo "Olá Mundo!";
-    }
-    
-    public function segundoMetodo()
-    {
-        echo "Este é o segundo método deste controlador!";
     }
 }
 ```
 
-Na primeira linha após o `<?php` temos a definição do  namespace do controlador e isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namepaces deve ser igual a estrutura do diretório, por ex: se você criar o seu controlador dentro de uma subpasta chamada "moduloX" o seu namespace deverá ser `App\Controller\ModuloX`.
+Na primeira linha após o `<?php` temos a definição do  namespace do controlador e isto é de extrema importância para que o roteamento funcione adequadamente. A criação dos namepaces deve seguir as seguintes regras:  
+1. Nomes em CamelCase
+2. O namespace deve ser igual ao caminho do diretório
+
+Exemplificando as regras, imagine que em `App/controller` você crie uma pasta com o nome `moduloX` e dentro dela coloque um controlador `SeuControlador.php`, logo o seu namespace será `App/Controller/ModuloX`.
 
 - É recomendável que todo controller herde do controlador padrão `\Core\Controller`, do contrário não poderá usufruir de funções como `post()`, `param()`, `loadView()` e etc...  
 - O método `index()` é o método padrão, ele pode ser acionado mesmo quando omitimos seu nome da URL, passando somente o nome do controlador.
