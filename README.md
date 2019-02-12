@@ -162,3 +162,4 @@ O arquivo fica com o seguinte código:
 **Observação 2:** As views podem ser colocadas em subdiretórios, bastanto informá-los no momento em que carregar a view.  
 Ex: `$this->loadView("subdiretorio/minhaView");`
 
+# Models
