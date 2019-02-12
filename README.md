@@ -84,7 +84,7 @@ Exemplificando as regras, imagine que em `App/controller` você crie uma pasta c
 ### Herança
 Apesar de não ser obrigatório, é extremamente recomendável que o seu controlador herde da classe `Core\Controller`, pois esta fornece um comportamento padrão, sem ela não será possível receber dados via post, get, resgatar parâmetros da URL e diversas outras coisas, logo, dificilmente você encontrará algum motivo para não herdá-la. 
 
-### Teste...
+### Testando
 Acesse http://seuservidor/framework/meucontrolador/teste, se tudo correr bem o seguinte resultado deve ser visualizado:
 
 ![](https://i.imgur.com/6F3uxjK.jpg)
@@ -92,10 +92,10 @@ Acesse http://seuservidor/framework/meucontrolador/teste, se tudo correr bem o s
 Você pode criar outros métodos e executá-los acessando a URL sempre no formato seuservidor/framework/seuControlador/seuMetodo
 
 ### Método Especial index()
-Caso queira, pode criar um método `index()` ele é conhecido como "Método Padrão" e é acionado automaticamente quando você não informa o nome do método na URL, ex: http://seuservidor/framework/meucontrolador
+Caso queira, pode-se criar um método `index()` ele é conhecido por "Método Padrão" e é acionado automaticamente quando você não informa o nome do método na URL, ex: http://seuservidor/framework/meucontrolador
 
 # Criando e Carregando Views
-As views como você já sabe são as interfaces com o usuário (GUI's) e normalmente é formada de códigos mistos (PHP, HTML, CSS e JavaScript). Para gerar sua primeira view, crie no diretório `App/view` um arquivo de nome `minhaView.html` e insira nele o seguinte código:
+As views são a parte visual da aplicação e normalmente é formada de códigos mistos (PHP, HTML, CSS e JavaScript). Para gerar sua primeira view, crie no diretório `App/view` um arquivo de nome `minhaView.html` e insira nele o seguinte código:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +108,7 @@ As views como você já sabe são as interfaces com o usuário (GUI's) e normalm
 </body>
 </html>
 ```
-Agora precisamos carregá-la e renderizá-la a partir de um controller, para tal iremos utilizar a funcionalidade herdada `loadView()`. Reaproveitando o controlador criado na sessão "Criando Primeiro Controller" o código fica da seguinte forma:
+Agora precisamos carregá-la e renderizá-la a partir de um controlador, para tal iremos utilizar a funcionalidade herdada `loadView()`. Reaproveitando o controlador criado na sessão "Criando Primeiro Controller" o código fica da seguinte forma:
 
 ```php
 <?php
@@ -129,12 +129,10 @@ Feito isso, acesse http://seuservidor/framework/meucontrolador/teste para visual
 
 ![](https://i.imgur.com/oRRtt2K.jpg)
 
-### Enviando Dados Para View
-O primeiro passo é alterar a extensão da nossa view de `.HTML` para `.PHP` ficando `minhaView.php`, isto é necessário pois agora vamos receber dados do controlador e exibí-los.  
-
-No controlador vamos fazer alterar o `segundoMetodo()` criando um array de nome qualquer e inserindo os dados que desejamos
+### Enviando dados para view
+No controlador vamos alterar o método `teste()` criando um array de nome qualquer e inserindo os dados que desejamos enviar para a view
 ```php
-    public function segundoMetodo()
+    public function teste()
     {
         $dados['nome'] = 'Hércules M.';
         $dados['idade'] = '21';
@@ -144,10 +142,10 @@ No controlador vamos fazer alterar o `segundoMetodo()` criando um array de nome 
     }
 }
 ```
-**Observação:** Os dados chegam na view da forma em que foram passados no controlador, então caso queira passar uma única informação, não é necessário criar um array. Pode-se fazer `$dados = 'Hercules';`
+**Observação:** Os dados chegam na view da forma em que foram enviados pelo controlador, logo os índices podem ser associativos, numéricos ou sequer precisa ser um array.
 
-
-No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os dados provenientes do controlador
+Na view alteraremos a extensão do arquivo de `.html` para `.php`, ficando então `minhaView.php`. Isto é necessário pois agora receberemos dados de forma dinâmica provenientes do controlador e para tal utilizaremos códigos em PHP embebidos em meio ao HTML.  
+O arquivo fica com o seguinte código:
 ```php
 <!DOCTYPE html>
 <html lang="en">
@@ -161,7 +159,6 @@ No arquivo minhaView.php vamos escrever um código PHP para resgatar e exibir os
 </html>
 ```
 **Observação:** Na view, os dados sempre são recuperados através da variável `$data`, não importa o nome que você deu a ela no controlador.  
-**Observação 2:** As views podem ser colocadas em subdiretórios. Ex: dentro de `App/view` podemos criar uma pasta chamada `viewsUsuario` e dentro dela colocar `minhaView.php`, contudo no momento de carregá-la devemos informar o subdiretório.  
-O código a seguir ilustra isso:  
-`$this->loadView("viewsUsuario/minhaView");`
+**Observação 2:** As views podem ser colocadas em subdiretórios, bastanto informá-los no momento em que carregar a view. Ex:   
+`$this->loadView("subdiretorio/minhaView");`
 
