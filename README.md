@@ -159,6 +159,6 @@ O arquivo fica com o seguinte código:
 </html>
 ```
 **Observação:** Na view, os dados sempre são recuperados através da variável `$data`, não importa o nome que você deu a ela no controlador.  
-**Observação 2:** As views podem ser colocadas em subdiretórios, bastanto informá-los no momento em que carregar a view. Ex:   
-`$this->loadView("subdiretorio/minhaView");`
+**Observação 2:** As views podem ser colocadas em subdiretórios, bastanto informá-los no momento em que carregar a view.  
+Ex: `$this->loadView("subdiretorio/minhaView");`
 
