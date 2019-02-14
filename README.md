@@ -163,3 +163,6 @@ O arquivo fica com o seguinte código:
 Ex: `$this->loadView("subdiretorio/minhaView");`
 
 # Models
+A camada models é conhecida como a camada em que se implementa as regras de negócio e onde se dá o acesso a dados. Para gerar seu primeiro model, crie um arquivo `MeuModelo.php` em `App/Models`.
+
+Dentro escreva o esquelo básico de um model.
