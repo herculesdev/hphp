@@ -226,10 +226,12 @@ A função `from()` tem um parâmetro obrigatório e outro opcional:
 ```
 Observação: O `from()` pode ser usado várias vezes para fazer união regular entre tabelas, e nestes casos o "alias" poderá ser útil. Veremos mais tarde.
 
-Por fim executamos a query que montamos:
+Por fim executamos a query
  ```php
     $this->execSelect();
 ```
+Observação: o retorno de `execSelect();` é um array de índices numéricos em que cada elemento é um array associativo com os dados resultantes da consulta
+
 
 O código completo fica da seguinte forma:
  ```php
