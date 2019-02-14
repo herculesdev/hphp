@@ -272,3 +272,29 @@ Exemplos abaixo:
  $this->read('users', '*');
   ```
   
+### União Regular
+A união regular pode ser feita utilizando `select()`, `from()`, `addWhere()` e `execSelect()`.  
+Primeiro selecionamos os campos que queremos trazer das duas tabelas.
+```php
+$this->select(array('t1.campo1', 't1.campo2'));
+$this->select(array('t2.campo1', 't2.campo2'));
+```
+"t1" e "t2" são apelidos para "tabela1" e "tabela2". Informamos estes apelidos na função   `from() `.
+```php
+$this->from('tabela1', 't1');
+$this->from('tabela2', 't2');
+```
+   Por fim finalizamos com `addWhere()` para impor uma condição à consulta e executando a consulta com `execSelect()`
+```php
+$this-addWhere('t1.campo1', 't2.campo1', true);
+$result = $this->execSelect();
+```
+Código completo abaixo:
+```php
+$this->select(array('t1.campo1', 't1.campo2'));
+$this->select(array('t2.campo1', 't2.campo2'));
+$this->from('tabela1', 't1');
+$this->from('tabela2', 't2');
+$this-addWhere('t1.campo1', 't2.campo1', true);
+$result = $this->execSelect();
+```
