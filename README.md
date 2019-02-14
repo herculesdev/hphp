@@ -181,7 +181,6 @@ class MeuModel extends \Core\Model
 Para realizar operação insert no banco de dados de forma fácil, basta utilizarmos a funcionalidade herdada `create()`, passando os seguintes parâmetros:  
 - String $table - nome da tabela
 - Array $data - array associativo em que a chave(índice) é o nome do campo e o valor é e a informação a ser guardada no campo.
-
 ```php
 public function inserirUsuario($nome, $email, $senha) {
     $dados['nome'] = $nome;
@@ -209,7 +208,6 @@ O retorno da função é um array de índices numéricos sendo que cada elemento
 2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`  
 Esta é uma maneira mais complexa de realizar o select, no entanto permite utilizar alias para as tabelas e é ideal para fazer união regular.
 A função `select()` recebe um array contendo as colunas
-
  ```php
     $this->select(array('coluna1', 'coluna2'));    
 ```
@@ -223,7 +221,6 @@ Observação: Ainda que queira adicionar uma única coluna, deve-se passá-la de
 A função `from()` tem um parâmetro obrigatório e outro opcional:
 - String $table - nome da tabela
 - String $alias - apelido para tabela (opcional)
-
  ```php
     $this->from('users');
 ```
@@ -242,8 +239,26 @@ O código completo fica da seguinte forma:
 ```
 
 ### Fazendo UPDATE
-
+O update é feito utilizando e função `update()` sende que ela recebe os parâmetros 
+- String $table - tabela em que se deseja fazer o update
+- Array $data - array associativo em que a chave(índice) é o nome da coluna que deseja alterar e o valor é o dado
+ ```php
+ $dados['nome'] = "Novo nome";
+ $dados['senha'] = "Nova senha;
+ $this->update("users", $dados);
+  ```
 ### Fazendo DELETE
+Para realizar a operação delete basta usar o método `delete()` com o seguinte parâmetro:
+- String $table - tabela em que se deseja delete o(s) registros
+ ```php
+ $this->delete('users');
+  ```
 
 ### Cláusula WHERE
-
+É sabido que geralmente precisamos buscar, atualizar ou apagar registros que satisfaçam uma condição, e para isto o H.PHP Framework disponibiliza o método `addWhere()` tendo como parâmetro:
+- String $column - campo em que deseja fazer comparação
+- String $value - valor que deseja comparar
+- Bool $valueIsColumn - a comparação é entre duas colunas?
+ ```php
+ $this->addWhere('coluna1');
+  ```
