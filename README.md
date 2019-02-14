@@ -168,6 +168,8 @@ A camada models é conhecida como a camada em que se implementa as regras de neg
 Dentro escreva o esqueleto básico de um model.
 ```php
 <?php
+namespace App\Model;
+
 class MeuModel extends \Core\Model
 {
 
@@ -176,10 +178,25 @@ class MeuModel extends \Core\Model
 É extremamente recomendável que seus modelos extenda o comportamento da classe `\Core\Model`, no entanto isto não é obrigatório. Alguns desenvolvedores aplicam o padrão DAO, criando uma camada extra dentro de `App/Model`. Neste caso, como as DAO's realizaram as operações com banco de dados, os mesmos devem herdar de `\Core\Model` e as demais classes não-DAO's podem servir apenas de modelo de dados.
 
 ### Fazendo INSERT
+Para realizar operação insert no banco de dados de forma fácil, basta utilizarmos a funcionalidade herdada `create()`, passando os seguintes parâmetros:  
+1. String $table - Nome da tabela
+2. Array $data - array associativo em que a chave(índice) é o nome do campo e o valor é e a informação a ser guardada no campo.
 
+```php
+<?php
+public function inserirUsuario($nome, $email, $senha) {
+    $dados['nome'] = $nome;
+    $dados['email'] = $email;
+    $dados['senha'] = $senha;
+    
+    $this->create("users", $dados);
+}
+```
 ### Fazendo SELECT
 
 ### Fazendo UPDATE
 
 ### Fazendo DELETE
+
+### Cláusula WHERE
 
