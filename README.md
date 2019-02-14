@@ -259,9 +259,16 @@ Para realizar a operação delete basta usar o método `delete()` com o seguinte
 - String $column - campo em que deseja fazer comparação
 - String $value - valor que deseja comparar
 - Bool $valueIsColumn - a comparação é colunas? (opicional)
-Ex:
+Exemplos abaixo:
  ```php
  $this->addWhere('coluna1', 'valor');
  $this->delete('users');
+  ```
+  
+  Pode ser chamado várias vezes
+   ```php
+ $this->addWhere('login', 'hercules);
+ $this->addWhere('senha', '123456');
+ $this->read('users', '*');
   ```
   
