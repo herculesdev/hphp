@@ -258,8 +258,10 @@ Para realizar a operação delete basta usar o método `delete()` com o seguinte
 É sabido que geralmente precisamos buscar, atualizar ou apagar registros que satisfaçam uma condição, e para isto o H.PHP Framework disponibiliza o método `addWhere()` tendo como parâmetro:
 - String $column - campo em que deseja fazer comparação
 - String $value - valor que deseja comparar
-- Bool $valueIsColumn - a comparação é colunas?
+- Bool $valueIsColumn - a comparação é colunas? (opicional)
+Ex:
  ```php
  $this->addWhere('coluna1', 'valor');
  $this->delete('users');
   ```
+  
