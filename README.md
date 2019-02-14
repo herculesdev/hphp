@@ -260,5 +260,5 @@ Para realizar a operação delete basta usar o método `delete()` com o seguinte
 - String $value - valor que deseja comparar
 - Bool $valueIsColumn - a comparação é entre duas colunas?
  ```php
- $this->addWhere('coluna1');
+ $this->addWhere('coluna1', 'valor');
   ```
