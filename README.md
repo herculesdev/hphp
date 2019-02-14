@@ -239,7 +239,7 @@ O código completo fica da seguinte forma:
 ```
 
 ### Fazendo UPDATE
-O update é feito utilizando e função `update()` sende que ela recebe os parâmetros 
+O update é feito utilizando e função `update()` sendo que ela recebe os parâmetros 
 - String $table - tabela em que se deseja fazer o update
 - Array $data - array associativo em que a chave(índice) é o nome da coluna que deseja alterar e o valor é o dado
  ```php
@@ -249,16 +249,16 @@ O update é feito utilizando e função `update()` sende que ela recebe os parâ
   ```
 ### Fazendo DELETE
 Para realizar a operação delete basta usar o método `delete()` com o seguinte parâmetro:
-- String $table - tabela em que se deseja delete o(s) registros
+- String $table - tabela em que se deseja deletar o(s) registros
  ```php
  $this->delete('users');
   ```
 
 ### Cláusula WHERE
 É sabido que geralmente precisamos buscar, atualizar ou apagar registros que satisfaçam uma condição, e para isto o H.PHP Framework disponibiliza o método `addWhere()` tendo como parâmetro:
-- String $column - campo em que deseja fazer comparação
-- String $value - valor que deseja comparar
-- Bool $valueIsColumn - a comparação é colunas? (opicional)
+- String $column - valor/campo em que deseja fazer comparação
+- String $value - valor/campo que deseja comparar com com o anterior
+- Bool $valueIsColumn - comparação entre duas colunas? (opicional)
 Exemplos abaixo:
  ```php
  $this->addWhere('coluna1', 'valor');
