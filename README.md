@@ -206,17 +206,17 @@ public function obterUsuarios() {
 ```
 O retorno da função é um array de índices numéricos sendo que cada elemento é outro array associativo com os dados.
 
-2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`
+2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`  
 Esta é uma maneira mais complexa de realizar o select, no entanto permite utilizar alias para as tabelas e é ideal para fazer união regular.
 A função `select()` recebe um array contendo as colunas
 
  ```php
-    $this->select(array('coluna1', 'coluna2');    
+    $this->select(array('coluna1', 'coluna2'));    
 ```
 Ela pode ser usada várias vezes se necessário:
  ```php
-    $this->select(array('coluna1', 'coluna2');  
-    $this->select(array('coluna3', 'coluna4');
+    $this->select(array('coluna1', 'coluna2'));  
+    $this->select(array('coluna3', 'coluna4'));
 ```
 Observação: Ainda que queira adicionar uma única coluna, deve-se passá-la dentro de um array. Ex: `array('coluna1').`
 
@@ -236,7 +236,7 @@ Por fim executamos a query que montamos:
 
 O código completo fica da seguinte forma:
  ```php
-    $this->select(array('coluna1', 'coluna2');
+    $this->select(array('coluna1', 'coluna2'));
     $this->from('users');
     $this->execSelect();
 ```
