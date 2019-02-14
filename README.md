@@ -179,11 +179,10 @@ class MeuModel extends \Core\Model
 
 ### Fazendo INSERT
 Para realizar operação insert no banco de dados de forma fácil, basta utilizarmos a funcionalidade herdada `create()`, passando os seguintes parâmetros:  
-1. String $table - Nome da tabela
-2. Array $data - array associativo em que a chave(índice) é o nome do campo e o valor é e a informação a ser guardada no campo.
+- String $table - nome da tabela
+- Array $data - array associativo em que a chave(índice) é o nome do campo e o valor é e a informação a ser guardada no campo.
 
 ```php
-<?php
 public function inserirUsuario($nome, $email, $senha) {
     $dados['nome'] = $nome;
     $dados['email'] = $email;
@@ -193,6 +192,20 @@ public function inserirUsuario($nome, $email, $senha) {
 }
 ```
 ### Fazendo SELECT
+O Select pode ser feito de duas formas  
+**1. Com a funcionalidade herdada `read()`**
+Para realizar um select com o `read()` é muito fácil, basta chamar a função passando os parâmetros:
+ - String $table - nome da tabela
+ - Array $columns - array contendo as colunas que deseja trazer do banco
+ ```php
+public function obterUsuarios() {
+    $campos = array("id", "nome", "email");    
+    $this->read("users", $campos);
+}
+```
+O retorno da função é um array de índices numéricos sendo que cada elemento é outro array associativo com os dados.
+
+**2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`**
 
 ### Fazendo UPDATE
 
