@@ -193,7 +193,8 @@ public function inserirUsuario($nome, $email, $senha) {
 ```
 ### Fazendo SELECT
 O Select pode ser feito de duas formas  
-**1. Com a funcionalidade herdada `read()`**
+
+1. Com a funcionalidade herdada `read()`  
 Para realizar um select com o `read()` é muito fácil, basta chamar a função passando os parâmetros:
  - String $table - nome da tabela
  - Array $columns - array contendo as colunas que deseja trazer do banco
@@ -205,7 +206,28 @@ public function obterUsuarios() {
 ```
 O retorno da função é um array de índices numéricos sendo que cada elemento é outro array associativo com os dados.
 
-**2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`**
+2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`
+Esta é uma maneira mais complexa de realizar o select, no entanto permite utilizar alias para as tabelas e é ideal para fazer União Regular entre tabelas.  
+A função `select()` recebe um array contendo as colunas
+
+ ```php
+    $this->select(array('coluna1', 'coluna2');    
+```
+Ela pode ser usada várias vezes se necessário:
+ ```php
+    $this->select(array('coluna1', 'coluna2');  
+    $this->select(array('coluna3', 'coluna4');
+```
+Observação: Ainda que queira adicionar uma única coluna, deve-se passá-la dentro de um array. Ex: `array('coluna1').`
+
+A função `from()` tem um parâmetro obrigatório e outro opcional:
+- String $table - nome da tabela
+- String $alias - apelido para tabela (opcional)
+
+ ```php
+    $this->from('users');
+```
+Observação: O `from()` pode ser usado várias vezes para fazer união regular entre tabelas, e nestes casos o alias poderá ser útil. Veremos isto mais adiante.
 
 ### Fazendo UPDATE
 
