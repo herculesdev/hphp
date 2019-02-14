@@ -207,7 +207,7 @@ public function obterUsuarios() {
 O retorno da função é um array de índices numéricos sendo que cada elemento é outro array associativo com os dados.
 
 2. Com as funcionalidades herdadas `select()`, `from()` e `execSelect()`
-Esta é uma maneira mais complexa de realizar o select, no entanto permite utilizar alias para as tabelas e é ideal para fazer União Regular entre tabelas.  
+Esta é uma maneira mais complexa de realizar o select, no entanto permite utilizar alias para as tabelas e é ideal para fazer união regular.
 A função `select()` recebe um array contendo as colunas
 
  ```php
@@ -227,7 +227,19 @@ A função `from()` tem um parâmetro obrigatório e outro opcional:
  ```php
     $this->from('users');
 ```
-Observação: O `from()` pode ser usado várias vezes para fazer união regular entre tabelas, e nestes casos o alias poderá ser útil. Veremos isto mais adiante.
+Observação: O `from()` pode ser usado várias vezes para fazer união regular entre tabelas, e nestes casos o "alias" poderá ser útil. Veremos mais tarde.
+
+Por fim executamos a query que montamos:
+ ```php
+    $this->execSelect();
+```
+
+O código completo fica da seguinte forma:
+ ```php
+    $this->select(array('coluna1', 'coluna2');
+    $this->from('users');
+    $this->execSelect();
+```
 
 ### Fazendo UPDATE
 
