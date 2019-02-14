@@ -165,4 +165,21 @@ Ex: `$this->loadView("subdiretorio/minhaView");`
 # Models
 A camada models é conhecida como a camada em que se implementa as regras de negócio e onde se dá o acesso a dados. Para gerar seu primeiro model, crie um arquivo `MeuModelo.php` em `App/Models`.
 
-Dentro escreva o esquelo básico de um model.
+Dentro escreva o esqueleto básico de um model.
+```php
+<?php
+class MeuModel extends \Core\Model
+{
+
+}
+```
+É extremamente recomendável que seus modelos extenda o comportamento da classe `\Core\Model`, no entanto isto não é obrigatório. Alguns desenvolvedores aplicam o padrão DAO, criando uma camada extra dentro de `App/Model`. Neste caso, como as DAO's realizaram as operações com banco de dados, os mesmos devem herdar de `\Core\Model` e as demais classes não-DAO's podem servir apenas de modelo de dados.
+
+### Fazendo INSERT
+
+### Fazendo SELECT
+
+### Fazendo UPDATE
+
+### Fazendo DELETE
+
