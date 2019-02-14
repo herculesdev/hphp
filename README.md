@@ -267,7 +267,7 @@ Exemplos abaixo:
   
   Pode ser chamado várias vezes
    ```php
- $this->addWhere('login', 'hercules);
+ $this->addWhere('login', 'hercules');
  $this->addWhere('senha', '123456');
  $this->read('users', '*');
   ```
